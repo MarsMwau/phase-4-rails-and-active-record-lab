@@ -36,5 +36,8 @@ module Phase4RailsAndActiveRecordLab
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Load the database configuration with alias parsing enabled
+    config.database_configuration = YAML.safe_load_file("#{Rails.root}/config/database.yml", aliases: true)
   end
 end
